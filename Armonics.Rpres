@@ -1,0 +1,34 @@
+Armonics 
+========================================================
+author: Mirizzi
+date: 21/2/2015
+
+Goal
+========================================================
+
+The aim of this presentation is to present the Shiny application that I created for the course project of the Creating Data Products course in the Data Science Specialization.
+
+
+
+Application description
+========================================================
+The application illustrates the superposition of harmonic oscillations. The amplitude of six frequencies (a fundamental frequency and its first five integer multiples) can be set using sliders as input parameters, and the sum of the resulting superposition as well as the individual harmonics are plotted as the output of the application.
+
+The application can be accessed at the following link:
+[Superpositioner] (http://mirizzi.shinyapps.io/Armonics_superpositioner)
+
+Screenshot
+========================================================
+![alt text](https://www.dropbox.com/s/ddcrltstc0fxwwo/Screen.png?raw=true)
+
+Underlying Code
+==================
+
+Here's some simplified example code from the application.
+Sum of the first armonic and half of the opposit of the 6-th armonic.
+```{r}
+x <-seq(from=0, to=1, by=0.01);
+f1 <- - 1.0; f6 <-  - 0.5;
+y <- - f1*sin(2*pi*x) + f6*sin(2*pi*6*x)
+plot(x, y, type="l");
+```
